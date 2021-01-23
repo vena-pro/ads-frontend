@@ -35,3 +35,12 @@ font-weight: 700;
 .box_name {}
 
 .box_phone {}
+
+.modal_window {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(black,0,0,0,0,75);
+}

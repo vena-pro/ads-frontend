@@ -1,16 +1,14 @@
 <?php
 
-$pdo = 
-new PDO ('mysql:host=localhost;dbname=ads_db', 'root', 'root');
+$pdo = new pdo('mysql:host=localhost; dbname=ads_db', 'root', 'root');
 
 if (isset($_GET['add'])) {
-
     $text = $_POST['text'];
     $name = $_POST['name'];
     $phone = $_POST['phone'];
 
     $p = $pdo -> prepare(
-    "INSERT INTO ads (text, name, phone) value (:text, :name, :phone)"
+        "INSERT INTO ads (text, name, phone) value (:text, :name, :phone)"
     );
 
     $p -> bindValue(':text', $text);
@@ -21,9 +19,7 @@ if (isset($_GET['add'])) {
 }
 
 else if (isset($_GET['all'])) {
-
-    $q = $pdo -> query(
-        "SELECT * FROM ads");
+    $q = $pdo -> query("SELECT * FROM ads");
 
     $r = $q -> fetchAll(PDO::FETCH_ASSOC);
 

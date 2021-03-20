@@ -1,7 +1,6 @@
 <?php
 
-$pdo = new PDO ('mysql:host=localhost;dbname=ads_db', 'root', 'root');
-
+$pdo = new pdo('mysql:host=localhost; dbname=ads_db', 'root', 'root');
 
 $pdo -> exec(
     "CREATE TABLE ads (
